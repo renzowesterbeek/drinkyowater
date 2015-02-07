@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import datetime, time, urllib, urllib2
 
+# Sends yo to all subscribed accounts
 def yo_all():
 	api_token = "b931eed2-1c90-4a53-8415-2263c48322ff"
 	data = urllib.urlencode({'api_token': api_token})
@@ -8,6 +9,7 @@ def yo_all():
 	response = urllib2.urlopen(request)
 	return 0
 
+# Gets current time in HH-MM format (20:22)
 def currentTime():
 	return time.strftime("%H:%M")
 
