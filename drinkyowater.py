@@ -25,4 +25,4 @@ while True:
 			print yo_all()
 			lastCheck = currentTime()
 	
-	time.sleep(10)
+	time.sleep(20)
