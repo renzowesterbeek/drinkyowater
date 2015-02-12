@@ -23,10 +23,24 @@ def main():
 		
 		if currentTime() != lastCheck:	
 			if currentTime() in notificationTimes:
-				# print yo_all()
-				print "yo_all()"
+				print yo_all()
 				lastCheck = currentTime()
 		
 		time.sleep(20)
+
+# Main loop for debugging
+def main_debug():
+	notificationTimes = ["7:20", "7:30" "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
+	lastCheck = ""
+	
+	while True:
+		print currentTime()
+		
+		if currentTime() != lastCheck:	
+			if currentTime() in notificationTimes:
+				print "yo_all()"
+				lastCheck = currentTime()
+		
+		time.sleep(3)
 		
 main()
