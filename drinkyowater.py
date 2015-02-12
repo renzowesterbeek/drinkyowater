@@ -16,7 +16,7 @@ def currentTime():
 
 # Main program loop
 def main():
-	notificationTimes = ["7:20", "7:30" "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
+	notificationTimes = ["07:20", "07:30" "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
 	lastCheck = ""
 	
 	while True:
