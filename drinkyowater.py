@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import datetime, time, urllib, urllib2
+import socket
 
 # Sends yo to all subscribed accounts
 def yo_all():
@@ -30,17 +31,20 @@ def main():
 
 # Main loop for debugging
 def main_debug():
-	notificationTimes = ["7:20", "7:30" "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
-	lastCheck = ""
+	# notificationTimes = ["7:20", "7:30" "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
+	# lastCheck = ""
 	
 	while True:
 		print currentTime()
 		
-		if currentTime() != lastCheck:	
-			if currentTime() in notificationTimes:
+		if currentTime() != "hello":	
+			if currentTime(): # in notificationTimes:
 				print "yo_all()"
-				lastCheck = currentTime()
+				# lastCheck = currentTime()
 		
 		time.sleep(3)
 		
-main()
+if socket.gethostname() == "Renzos-MacBook-Pro.local":
+	main_debug()
+else:
+	main()
