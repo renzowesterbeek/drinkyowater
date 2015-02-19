@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo "Cloning from github"
-mkdir update
-cd update
-git pull https://github.com/renzowesterbeek/drinkyowater.git master
+echo "Updating application..."
+cd ..
+rm -rf drinkyowater
+git clone https://github.com/renzowesterbeek/drinkyowater.git
+mv drinkyowater drinkyowaterlatest
