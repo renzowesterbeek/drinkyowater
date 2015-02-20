@@ -1,4 +1,5 @@
 #!/bin/bash
+# v1.0
 
 function checkForUpdate {
 	localSHA=$(git rev-parse HEAD)
