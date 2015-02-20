@@ -17,8 +17,7 @@ function checkForUpdate {
 		cd ..
 		rm -rf drinkyowater/
 		git clone https://github.com/renzowesterbeek/drinkyowater.git
-		curDir=${PWD##*/}
-		echo "curDir"
+		ls
 		cd ../drinkyowater/
 		echo "Done!"
 	fi
