@@ -1,6 +1,4 @@
 #!/bin/bash
-# v1.0
-
 function checkForUpdate {
 	localSHA=$(git rev-parse HEAD)
 	remoteSHA=$(git ls-remote git://github.com/renzowesterbeek/drinkyowater.git HEAD)
@@ -15,7 +13,7 @@ function checkForUpdate {
 	if [ "$localSHA10" != "$remoteSHA10" ]; then
 		echo "Updating application..."
 		mainPID=$(pidof python main.py)
-		kill "$mainPID"
+		kill $mainPID
 		cd ..
 		rm -rf drinkyowater/
 		git clone https://github.com/renzowesterbeek/drinkyowater.git
@@ -26,9 +24,9 @@ function checkForUpdate {
 
 function main {
 	while true; do
-		echo "Checking"
+		echo "Checking for update..."
 		checkForUpdate
-		sleep 20
+		sleep 30
 	done
 }
 
