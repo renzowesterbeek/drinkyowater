@@ -10,13 +10,20 @@ def yo_all():
 	response = urllib2.urlopen(request)
 	return 0
 
+def getListOfTheDay():
+	w = time.strftime("%w")
+	if w == 0 or w == 6: # Weekend
+		return ["07:20", "07:30", "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
+	else: # Weekday
+		return ["07:20", "07:30", "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
+
 # Gets current time in HH-MM format (20:22)
 def currentTime():
 	return time.strftime("%H:%M")
 
 # Main program loop
 def main():
-	notificationTimes = ["07:20", "07:30" "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
+	notificationTimes = ["07:20", "07:30", "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
 	lastCheck = ""
 	
 	while True:
@@ -31,19 +38,21 @@ def main():
 
 # Main loop for debugging
 def main_debug():
-	# notificationTimes = ["7:20", "7:30" "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
+	# notificationTimes = getListOfTheDay()
 	# lastCheck = ""
 	
 	while True:
 		print currentTime()
 		
-		if currentTime() != "hello":	
+		if currentTime() != "lastCheck":	
 			if currentTime(): # in notificationTimes:
 				print "yo_all()"
 				# lastCheck = currentTime()
 		
+		print getListOfTheDay()
 		time.sleep(3)
-		
+
+# Runs debug loop on local machine, main loop on remote		
 if socket.gethostname() == "Renzos-MacBook-Pro.local":
 	main_debug()
 else:
