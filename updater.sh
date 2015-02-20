@@ -1,10 +1,12 @@
 #!/bin/bash
+# v1.0
 
 function checkForUpdate {
 	localSHA=$(git rev-parse HEAD)
 	remoteSHA=$(git ls-remote git://github.com/renzowesterbeek/drinkyowater.git HEAD)
 	
-	remoteSHA10=${remoteSHA:0:10}
+	# remoteSHA10=${remoteSHA:0:10}
+	remoteSHA10=$(cat sha.txt)
 	localSHA10=${localSHA:0:10}
 	
 	echo $localSHA10
