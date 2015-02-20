@@ -18,7 +18,8 @@ function checkForUpdate {
 		rm -rf drinkyowater/
 		git clone https://github.com/renzowesterbeek/drinkyowater.git
 		ls
-		cd ../drinkyowater/
+		cd drinkyowater/
+		ls
 		echo "Done!"
 	fi
 }
