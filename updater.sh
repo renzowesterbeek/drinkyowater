@@ -18,6 +18,7 @@ function checkForUpdate {
 		rm -rf drinkyowater/
 		git clone https://github.com/renzowesterbeek/drinkyowater.git
 		cd drinkyowater/
+		python main.py &
 		echo "Done!"
 	fi
 }
