@@ -15,10 +15,12 @@ function checkForUpdate {
 	if [ "$localSHA10" != "$remoteSHA10" ]; then
 		echo "Updating application..."
 		mainPID=$(pidof python main.py)
-		kill $mainPID
+		kill "$mainPID"
 		cd ..
-		rm -rf drinkyowater
+		rm -rf drinkyowater/
 		git clone https://github.com/renzowesterbeek/drinkyowater.git
+		cd ../drinkyowater/
+		echo "Done!"
 	fi
 }
 
@@ -26,7 +28,7 @@ function main {
 	while true; do
 		echo "Checking"
 		checkForUpdate
-		sleep 300
+		sleep 20
 	done
 }
 
