@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import datetime, time, urllib, urllib2
-import socket
+import socket, sys
 
 # Sends yo to all subscribed accounts with DRINKYOWATER account
 def yo_all():
@@ -24,39 +24,34 @@ def currentTime():
 
 # Main program loop
 def main():
-	lastCheck = ""
+	lastTimeCheck = ""
 	
 	while True:
-		print currentTime()
-		
-		if currentTime() != lastCheck:	
+		if currentTime() != lastTimeCheck:	
 			if currentTime() in getListOfTheDay():
 				print yo_all()
-				lastCheck = currentTime()
+				lastTimeCheck = currentTime()
 		
 		time.sleep(20)
-	
 	return 0
 
 # Main loop for debugging
 def main_debug():
-	# lastCheck = ""
+	# lastTimeCheck = ""
 	
 	while True:
 		print currentTime()
-		
-		if currentTime() != "lastCheck":	
+		if currentTime() != "lastTimeCheck":	
 			if currentTime(): # in getListOfTheDay():
 				print "yo_all()"
-				# lastCheck = currentTime()
+				# lastTimeCheck = currentTime()
 		
 		print getListOfTheDay()
 		time.sleep(3)
-	
 	return 0
 
-# Runs debug loop on local machine, main loop on remote		
-if socket.gethostname() == "Renzos-MacBook-Pro.local":
+# Runs debug loop on OSX (local) machine, main loop on LINUX (remote)	
+if sys.platform == "darwin":
 	main_debug()
 else:
 	main()
