@@ -11,7 +11,7 @@ def yo_all():
 	return 0
 
 # Returns list with times based on day
-def getListOfTheDay():
+def get_list_of_the_day():
 	w = time.strftime("%w")
 	if w == "0" or w == "6": # Weekend
 		return ["10:30", "12:30", "13:30", "14:30", "16:30", "18:30", "20:30", "21:30"]
@@ -19,34 +19,34 @@ def getListOfTheDay():
 		return ["07:20", "07:30", "11:10", "13:10", "15:12", "16:12", "17:00", "19:00",  "20:00",  "21:00",  "21:30"]
 
 # Gets current time in HH-MM format (20:22)
-def currentTime():
+def current_time():
 	return time.strftime("%H:%M")
 
 # Main program loop
 def main():
-	lastTimeCheck = ""
+	last_time_check = ""
 	
 	while True:
-		if currentTime() != lastTimeCheck:	
-			if currentTime() in getListOfTheDay():
+		if current_time() != last_time_check:	
+			if current_time() in get_list_of_the_day():
 				print yo_all()
-				lastTimeCheck = currentTime()
+				last_time_check = current_time()
 		
 		time.sleep(20)
 	return 0
 
 # Main loop for debugging
 def main_debug():
-	# lastTimeCheck = ""
+	# last_time_check = ""
 	
 	while True:
-		print currentTime()
-		if currentTime() != "lastTimeCheck":	
-			if currentTime(): # in getListOfTheDay():
+		print current_time()
+		if current_time() != "last_time_check":	
+			if current_time(): # in get_list_of_the_day():
 				print "yo_all()"
-				# lastTimeCheck = currentTime()
+				# last_time_check = current_time()
 		
-		print getListOfTheDay()
+		print get_list_of_the_day()
 		time.sleep(3)
 	return 0
 
